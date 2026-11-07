@@ -1,0 +1,18 @@
+{
+  "name": "lifeboat",
+  "version": "1.0.0",
+  "description": "LIFEBOAT: out-of-band cyber incident command center. Zero dependencies.",
+  "main": "server.js",
+  "private": true,
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "quickstart": "node scripts/quickstart.js",
+    "cert": "sh scripts/gen-cert.sh",
+    "demo": "node scripts/seed-demo.js",
+    "totp": "node scripts/totp.js",
+    "build": "node scripts/build-single.js",
+    "test": "node --test test/*.test.js"
+  }
+}

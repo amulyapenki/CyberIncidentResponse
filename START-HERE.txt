@@ -1,0 +1,10 @@
+LIFEBOAT - START HERE
+=====================
+1. Install Node.js (LTS) from https://nodejs.org if you don't have it.
+2. In VS Code: File > Open Folder > pick this LIFEBOAT folder.
+3. Open the terminal: View > Terminal
+4. Type this and press Enter:      npm run quickstart
+5. Open in your browser:           http://127.0.0.1:8443
+6. Log in:  username jordan  /  password lifeboat-demo-2026
+            code = the 6 digits next to "jordan" in the terminal (new ones every 30 s)
+Stop the app: click the terminal and press Ctrl + C.
