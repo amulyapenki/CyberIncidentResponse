@@ -1,0 +1,42 @@
+.demo-box { position: fixed; z-index: 70; font-size: 14px; }
+.demo-box.on-login { top: calc(16px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); }
+.demo-box.in-app { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); left: 244px; }
+.demo-box.open { width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--accent); border-radius: 12px; padding: 14px; box-shadow: 0 16px 40px rgba(0, 0, 0, .35); display: grid; gap: 8px; }
+.demo-box p { margin: 0; color: var(--muted); }
+.demo-box code { font-family: var(--mono); color: var(--text); font-weight: 700; }
+.demo-head { display: flex; justify-content: space-between; align-items: center; }
+.demo-x { background: none; border: 1px solid var(--line2); color: var(--text); border-radius: 6px; width: 28px; height: 28px; cursor: pointer; }
+.demo-row { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--line); }
+.demo-row span { display: block; font-size: 12px; color: var(--muted); }
+.demo-row code { font-size: 16px; letter-spacing: .08em; }
+.demo-row button, .demo-reset, .demo-pill { background: var(--accent); color: #fff; border: 0; border-radius: 7px; padding: 6px 10px; font-weight: 700; cursor: pointer; }
+.demo-reset { background: transparent; color: var(--muted); border: 1px solid var(--line2); }
+.demo-pill { padding: 9px 14px; border-radius: 999px; box-shadow: 0 8px 24px rgba(0, 0, 0, .35); }
+.demo-tip { font-size: 12px; }
+@media (max-width: 760px) { .demo-box.in-app { left: 16px; bottom: 90px; } .demo-box.on-login.open { position: static; margin: 16px; width: auto; } }
+@media print { .demo-box { display: none; } }
+
+/* Demo helper in Winstead link blue */
+.demo-box.open { border-color: #2e6b92 !important; }
+.demo-row button, .demo-pill { background: #2e6b92 !important; color: #fff !important; }
+.demo-row button:hover, .demo-pill:hover { background: #245878 !important; }
+
+/* Demo Codes sits bottom-right, under the assistant button; the assistant moves up to make room. */
+.demo-box.in-app { left: auto; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+.demo-box.in-app .demo-pill { min-width: 64px; }
+body:has(.demo-box.in-app:not([hidden])) .assist-launch { bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+body:has(.demo-box.in-app:not([hidden])) .assist { bottom: calc(142px + env(safe-area-inset-bottom, 0px)); height: min(600px, calc(100vh - 180px)); }
+body.room-open .demo-box.in-app { right: calc(420px + 18px); }
+@media (max-width: 760px) {
+  .demo-box.in-app { left: auto; right: 16px; bottom: 112px; }
+  body:has(.demo-box.in-app:not([hidden])) .assist-launch { bottom: 160px; }
+  body:has(.demo-box.in-app:not([hidden])) .assist { bottom: 236px; height: calc(100vh - 312px); }
+  body.room-open .demo-box.in-app { right: 16px; }
+}
+.demo-box.in-app.open { z-index: 95 !important; }
+body.nav-collapsed .demo-box.in-app { left: auto; }
+body:has(.demo-box.in-app.open) .assist-launch { visibility: hidden; }
+/* smaller Demo Codes button */
+.demo-box.in-app .demo-pill { min-width: 0; padding: 4px 10px; font-size: 12px; line-height: 1.3; letter-spacing: .02em; }
+body:has(.demo-box.in-app:not([hidden])) .assist-launch { bottom: calc(48px + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 760px) { body:has(.demo-box.in-app:not([hidden])) .assist-launch { bottom: 146px; } }
